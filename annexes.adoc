@@ -5,3 +5,28 @@
 :revnumber: 0.1
 :revremark: Création du fichier initial.
 :lang: fr
+
+== Annexes
+
+=== Liens utiles
+
+Voici les liens vers les dépôts GIT utilisés pour ce projet :
+
+* Code source des librairies : http://79.137.32.42:3000/Kero76/medialibs-core
+* Code source des webservices : http://79.137.32.42:3000/Kero76/medialibs-project
+* Code source du rapport du projet : http://79.137.32.42:3000/Kero76/medialibs-report
+
+=== License
+
+Ce projet est sous license https://opensource.org/licenses/MIT[MIT].
+
+=== Auteur
+
+Ce projet à été réalisé dans son entièreté par Nicolas GILLE : <nic.gille@gmail.com>
+
+=== Question bonus
+
+L'utilisation de l'architecture REST est plus avantageuse lorsque l'on développe
+une application ayant pour but de communiquer entre une machine et un humain.
+Inversement, l'architecture SOAP est avantage lorsque l'on fait communiquer deux
+machines entres elles sans intervenant humains.
