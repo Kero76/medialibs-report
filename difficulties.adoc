@@ -1,0 +1,37 @@
+:author: Nicolas GILLE
+:email: nic.gille@gmail.com
+:description: Difficultés rencontrées durant le projet.
+:revdate: 01 février 2018
+:revnumber: 0.1
+:revremark: Création du fichier initial.
+:lang: fr
+
+== Difficultés rencontrées
+
+Au cours du projet, de nombreuses difficultés ont été rencontrées, vous retrouverez
+ici une liste potentiellement non exhaustive de l'ensemble des difficultés rencontrées.
+
+=== Apprentissage de nouvelles technologies
+
+En effet, bien qu'ayant déjà une base de connaissance liés au framework Spring-Boot,
+il m'a tout de même était difficile de manipuler le modèle initial de mon projet,
+étant bien trop important à manipuler.
+De plus, j'ai rencontrée quelques soucis avec les *Repository* de JPA, que se soit
+les liens inter-entités via le *Mapping* proposés par le mécanisme d'ORM.
+
+De la même façon, l'apprentissage du framework **React** à été particulièrement
+difficile, d'une part faute de temps et d'autre part due à la difficulté liés
+aux fonctionnements complétement différents des frameworks que j'ai pu
+manier jusque là.
+
+=== Architectures orienté service
+
+Un des soucis majeure que j'ai rencontrée durant le développement du projet fut
+l'architecture du projet.
+En effet, celle-ci s'est révélé plus complexe que prévue. Souhaitant avoir des
+services webs entièrement indépendants les uns des autres, il m'a été difficile
+de réussir à faire en sorte que chaque service n'aient aucune dépendance avec les
+autres services.
+
+Pour cela, j'ai décidé, suite à la rédaction du **Document d'Architecture Logiciel**,
+de réalisé un POC

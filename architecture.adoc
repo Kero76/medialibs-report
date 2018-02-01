@@ -1,0 +1,16 @@
+:author: Nicolas GILLE
+:email: nic.gille@gmail.com
+:description: Architecture du projet.
+:revdate: 01 février 2018
+:revnumber: 0.1
+:revremark: Création du fichier initial.
+:lang: fr
+
+== Architecture du projet
+
+Pour cela, nous avons défini une architecture orienté service composé d'un nombre
+important de web service dédiés a une tâche précise dans le cadre du projet. +
+L'idée est ici de pouvoir interchanger de manière simple les différents composants du projet.
+
+Dans l'optique d'éviter des liens entres nos différentes services, nous avons
+choisi de définir un ensenble de

@@ -1,0 +1,16 @@
+:author: Nicolas GILLE
+:email: nic.gille@gmail.com
+:description: Introduction du rapport.
+:revdate: 01 février 2018
+:revnumber: 0.1
+:revremark: Création du fichier initial.
+:lang: fr
+
+== Contexte du projet
+
+Ce projet consiste à créer un système permettant la consultation des médias
+empruntés au sein d'une médiathèque. +
+Ce système a aussi pour but d'interagir avec des services externes déjà existant
+et que l'on doit intégrer dans notre vue afin d'avoir un aperçu de la météo. +
+L'idée est ici de permettre de manipuler un framework Backend en Java, à savoir Spring-Boot
+et un framework Frontend typée JavaScript à savoir React / Angular ou Vue.js.

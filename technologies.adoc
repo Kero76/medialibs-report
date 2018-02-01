@@ -1,0 +1,7 @@
+:author: Nicolas GILLE
+:email: nic.gille@gmail.com
+:description: Technologies utilisés dans le projet.
+:revdate: 01 février 2018
+:revnumber: 0.1
+:revremark: Création du fichier initial.
+:lang: fr
