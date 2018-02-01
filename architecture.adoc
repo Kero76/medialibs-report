@@ -8,9 +8,31 @@
 
 == Architecture du projet
 
-Pour cela, nous avons défini une architecture orienté service composé d'un nombre
-important de web service dédiés a une tâche précise dans le cadre du projet. +
-L'idée est ici de pouvoir interchanger de manière simple les différents composants du projet.
+Au niveau de l'architecture du projet, j'ai choisi de réalisé uniquement des services
+web entièrement indépendant les uns des autres.
+Pour cela, j'ai réalisé un ensemble de *librairies* représentant le *core*
+de mon application finale.
+En effet, il est possible d'inclure ces bibliothèques dans les différents webservices,
+du moment qu'il en aie besoin pour le fonctionnement. +
+L'avantage de cette méthode est qu'il permet d'une part une *évolutivité* du projet
+initiale, car il suffit à un développeur externe d'hériter les *modèles* de la
+bibliothèques afin d'y ajouter les attributs qu'il manque pour que tout fonctionne
+directement sans modification majeure. +
+Le second avantage est donc l'absence de *coeur* applicatif unissant l'ensemble du
+projet, rendant ainsi plus simple l'ajout de fonctionnalités dans une bibliothèque
+précise. +
+L'inconvénient de cette méthode est qu'il est plus difficile pour un développeur
+seul de maintenir l'ensemble du projet, car il lui est alors nécessaire de
+jongler entre un ensemble de bibliothèque n'ayant pas de liens entre elles.
 
-Dans l'optique d'éviter des liens entres nos différentes services, nous avons
-choisi de définir un ensenble de
+De la même façon que les librairies, j'ai développé un ensemble de *webservices*,
+ayant pour but de répondre aux exigences contenus dans le sujet du projet MediaLibs.
+Ne souhaitant une fois encore pas avoir de *core* reliant tout le projet,
+le choix de développer un ensemble de webservice m'a paru être la meilleures solution
+pour éviter le développement d'une application *monolithique*.
+
+Pour finir, l'application graphique aurait été "simple" à intégrer au projet.
+En effet, il s'agit au final d'une application devant uniquement requếter
+des services web ayant des fonctions bien spécifiques, qu'il est alors facile
+d'intégrer à la vue , du moment que le service permet d'effectuer l'action voulu
+par un utilisateur humain derrière l'interface utilisateur.

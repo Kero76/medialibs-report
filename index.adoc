@@ -2,8 +2,8 @@
 :email: nic.gille@gmail.com
 :description: Rapport du projet de JEE
 :revdate: 01 février 2018
-:revnumber: 0.1
-:revremark: Création du fichier initial avec les includes de chaque partie.
+:revnumber: 0.2
+:revremark: Ajout de l'include relatif à l'architecture.
 :lang: fr
 
 = Rapport du projet de JEE - Medialibs
@@ -14,6 +14,8 @@
 toc::[]
 
 include::introduction.adoc[]
+
+include::architecture.adoc[]
 
 include::difficulties.adoc[]
 
