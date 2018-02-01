@@ -5,3 +5,71 @@
 :revnumber: 0.1
 :revremark: Création du fichier initial.
 :lang: fr
+
+== Technologies utilisées durant le projet
+
+=== Spring-Boot
+
+Spring-Boot est un framework développé en *Java*, ayant pour but le développement
+facilité d'application web en Java.
+Il utilise un système d'annotation permettant de rendre plus aisé la configuration
+et l'installation d'un service web.
+Dans le cadre du projet, il fut utilisé afin de fournir un *Backend* applicatif
+basé essentiellement sur des *services web*.
+De plus, il possède des modules dédiées spécifiquement à la réalisation de test
+unitaire et d'ingréation des différents modules que l'on retrouve dans un projet
+courant liés auw web, à savoir un système de *Mock* des services web assez poussés,
+ainsi que la présence d'un système permettant de simplement mettre en place un
+système de test pour *JPA*.
+
+Spring-Boot se compose d'un ensemble de *bundle* tels qu'un bundle pour *JPA*,
+permettant de se connecter simplement à de nombreux types de base de données,
+un *Tomcat* embarqué afin de pouvoir lancer rapidement son application,
+sans devoir configurer nécessairement à la main un Tomcat,
+ou encore un bundle pour ajouter de la sécurité sur notre application.
+
+=== Maven
+
+**Maven** est un gestionnaire de dépendance pour Java.
+Celui-ci s'articule autour d'un fichier de configuration que l'on place à la racine
+de son projet, à savoir le fichier *pom.xml*.
+Ecrit en XML, ce fichier permet de définir un ensemble de règle et de configuration
+pour le projet en cours.
+Maven permet aussi la compilation, le lancement des jeux de tests, ou encore le déployement
+automatisé de la librairie générée via un ensemble de jeux de commandes important.
+
+=== Git et l'outil Git Flow
+
+Utilisant déjà *Git* depuis quelques années maintenant, j'ai voulu appréhender un
+nouvel outil trouvé durant la réalisation de ce projet, à savoir
+https://danielkummer.github.io/git-flow-cheatsheet/[Git Flow].
+
+Tout d'abord, définissons rapidement *Git*. Git est un système de versionning
+de code source, permettant ainsi de facilement archiver son projet en version
+et d'avoir une trace des modifications faites.
+Il permet bien entendu aussi de réalisé du travail collaboratif de manière simple
+via un ensemble de commande a appréhender.
+
+*Git Flow*, quant à lui est un outil ajoutant une surcouche aux commandes Git
+initiale. En effet, le Git Flow est une philosophie s'appliquant a Git,
+et ayant pour but de définir selon des règles simple un bel historique Git.
+L'outil Git Flow permet de facilement suivre cette philosophie via un ensemble
+de commande permettant de réalisé le Git Flow de manière plus rapide,
+certaines commandes représentant plusieurs commandes Git basique à réalisée
+normalement d'affiler.
+
+J'ai voulu utiliser cette outil, car il sera utilisé durant le projet annuel de
+cette année, et m'aura ainsi permis de me familliariser au préalable avec cet outil.
+
+=== AsciiDoctor
+
+Afin d'écrire ce formidable rapport, et n'ayant pas envie d'apprendre le LaTeX,
+j'ai décidé de me tourner vers **l'AsciiDoctor**, qui est pour moi une très bonne
+alternative au LaTeX.
+Comme vous le verrez dans les sources que je vais vous fournir, l'AsciiDoc est une
+"évolution" du *Markdown*.
+Celui-ci permet de faire du Markdown, en ajoutant un nombre important de fonctionnalités
+faisant de lui un langage de plus en plus utilisé, que se soit dans l'écriture
+d'article de recherche ou dans l'écriture de livre en général.
+Je pense ainsi réutilisé ce langage pour la rédaction de mon rapport de stage
+de fin de M2, afin de voir la véritable étendu du langage.
