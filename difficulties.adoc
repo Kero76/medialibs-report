@@ -33,5 +33,109 @@ services webs entièrement indépendants les uns des autres, il m'a été diffic
 de réussir à faire en sorte que chaque service n'aient aucune dépendance avec les
 autres services.
 
-Pour cela, j'ai décidé, suite à la rédaction du **Document d'Architecture Logiciel**,
-de réalisé un POC
+Pour réussir cette architecture, j'ai décidé de créer un ensemble de **librarie**
+contenant uniquement les *entités et les repositories* de l'ensemble des webservices
+du projet. +
+Ceci permet d'une part, de les récupérer uniquement dans les services désirés
+et d'autre part de pouvoir hérité de l'entité de base afin d'y ajouter des attributs
+plus spécifiques en fonction des besoins du projet sur lequel j'applique ces modèles.
+
+=== La rédaction de test unitaire avec SpringBootTest
+
+En effet, ne souhaitant pas *imposer* d'avoir une base de donnée en dure présente sur
+la machine du développeur souhaitant lancer les tests unitaires du projet,
+j'ai choisi d'utiliser la base de donnée **H2**, qui est une base de donnée embarquée. +
+L'un des soucis que j'ai rencontrée avec ceci fut de réussir à la lancer aux démarrages des
+tests et non durant la mise en production du webservice.
+Le but était ainsi de pouvoir choisir une base de donnée embarquées pour l'exécution
+des tests unitaires des différents modules et d'avoir une *vraie* base de données
+pour le système en production (orienté SQL, plus précisément MySQL).
+
+D'autres problèmes sont intervenus en plus de son utilisation uniquement lors des tests.
+En effet, il est nécessaire d'avoir un *contexte d'utilisation* basé sur Spring-Boot
+afin que les annotations `@Autowired` puisse être utilisées dans les tests. +
+Pour cela, il m'a fallu définir la classe suivante dans l'ensemble de mes tests
+```java
+package fr.nicolasgille.medialibs.core.[library_name];
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ApplicationContext {
+}
+```
+Cette classe a pour unique but de permettre l'exécution des tests unitaires liés
+aux bibliothèques, à savoir les tests sur les *méthodes customs* des **Repository**.
+
+=== La gestion des librairies et web services via des modules Maven
+
+Afin d'avoir une architecture bien distincte, et ne souhaitant pas créer autant de
+dépôt GIT qu'il y a de *libraries* et de *webservice* présent pour l'ensemble du projet,
+j'ai du trouver une alternative à cette solution, qui s'est avérée être les **Module Maven**. +
+En effet, un *module maven* peut être comparé à un *sous projet* présent dans les sources
+du projet maven initial.
+Cette solution consiste donc a définir dans le *pom.xml* parent les modules de la façon suivante :
+
+```xml
+<project>
+  ....
+  <!-- Module definition -->
+    <modules>
+        <module>advert</module>
+        <module>media</module>
+        <module>user</module>
+        <module>stock</module>
+        <module>loan</module>
+    </modules>
+  ....
+</project
+```
+
+Les avantages d'utiliser cette méthode sont qu'il est assez aisé d'ajouter des
+dépendance uniquement dans certaines libraries et non dans le *pom parent* initial.
+De plus, il permet une compilation séparée des sources afin d'obtenir des *jar*
+n'ayant que les sources d'un module donnée.
+Ce procédé fut aussi utilisé dans la génération des *webservices* afin,
+une fois encore de généré uniquement un webservice précis, comme on le retrouverais
+dans une application plus importante.
+
+=== L'envoi des librairies sur un système ArchiFactory / Nexus
+Un problème lié directement avec le problème précédent fut soulevé lors de la compilation
+des bibliothèques. En effet, devant importer mes *jar* à la main dans mon projet,
+j'ai voulu automatiser cette action via l'ajout d'un système typé **ArchiFactory / Nexus**.
+Ceci avait pour but de permettre l'envoi des librairies sur un serveur pouvant être
+requêté par **Maven** afin de pouvoir directement récupérér les sources des dépendances,
+de la même façon que pour les dépendences de Spring-Boot par exemple.
+J'ai donc trouvé une solution libre et gratuite afin de réalisé ce processus :
+https://mymavenrepo.com[My Maven Repository].
+L'essai fut malheureusement concluant uniquement sur une partie du processus.
+
+Pour que cela fonctionne, il faut dans un premier temps *upload* les librairies
+sur le dépôt maven. Ceci ce fait assez simplement en configurant son fichier
+*settings.xml* présent dans le dossier *$HOME/.m2* de son système d'exploitation,
+puis en ajoutant ces lignes dans son *pom.xml*
+
+```xml
+<project>
+  ...
+  <!-- Distribution management -->
+  <distributionManagement>
+      <repository>
+          <id>myMavenRepo.write</id>
+          <url>${myMavenRepo.write.url}</url>
+      </repository>
+  </distributionManagement>
+  ...
+</project>
+```
+Ceci fait, il suffit ensuite de taper la commande suivante `$ mvn deploy`,
+dans le module de la librairie de son choix afin de l'envoyer sur le serveur.
+
+Cependant, la partie permettant de récupérer les sources du dépôt n'ont pas fonctionnée
+pour moi, malgré une quantité importante de temps passés sur ce problème.
+Ainsi, je n'ai eu que la moitié du processus de récupération des libraires.
+
+J'ai donc cherché une solution alternative que j'ai trouvé, via la commande suivante :
+`$ mvn install:install-file -Dfile=[path_to_source]/[jar_name].jar -DgroupId=[group_id] -DartifactId=[artifactId] -Dversion=[jar_version] -Dpackaging=jar`
+Ceci permet d'installer les dépendances maven directement dans le dossier *.m2*
+afin de les rendres accessible depuis l'ensemble des projets présent sur la machine.
