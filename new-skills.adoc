@@ -1,0 +1,55 @@
+:author: Nicolas GILLE
+:email: nic.gille@gmail.com
+:description: Rapport du projet de JEE
+:revdate: 02 février 2018
+:revnumber: 0.1
+:revremark: Création du fichier initial
+:lang: fr
+
+== Compétences acquises durant le projet
+
+Au cours du projet, j'ai pu acquérir plusieurs nouvelles compétences relatives
+au monde du Java. Vous trouverez ci dessous une liste non exhaustive
+
+=== Acquisitions de nouvelles connaissances sur Spring-Boot
+
+Ce projet m'a permis d'acquérir de nouvelles compétences relative au framework
+Spring-Boot.
+En effet, j'ai pu apprendre a rédiger des tests unitaires sur mes objets
+*Repository* ainsi que sur mes services REST.
+L'apprentissage de ces méthodes de tests va m'être particulièrement utile pour
+le projet annuel, ayant un rôle de responsable test au seins de mon équipe.
+
+De plus, j'ai appris pas mal de chose au niveau du contexte d'utilisation de
+Spring-Boot, ayant rencontrée lors de la rédaction des tests de nombreux soucis
+de contexte non validepour le déployement de mes *repositories*.
+
+=== Principe de Module sous Maven
+
+Comme vu précédement, les bibliothèques ont été développé au sein d'un même projet.
+Souhaitant "simuler" un ensemble de projet séparé, j'ai pu apprendre à me servir
+des module de *Maven* afin d'avoir plusieurs projet dans un projet unique, qu'il
+me suffit ensuite de compiler de manière séparée, permettant ainsi d'avoir
+des librairies avec des versions différentes, ainsi ques des dépendances
+particulières pour chaque librairie.
+
+=== Envoi des sources de la librairie au sein d'un système ArchiFactory / Nexus
+
+J'ai appris a configurer le fichier *pom.xml* afin d'envoyer des fichiers *jar*
+sur un serveur ArchiFactory / Nexus, pour déployer automatiquement les librairies
+et les rendres accessible aux web services en tant que dépendance maven.
+
+=== Maîtrise de l'outil Git Flow
+
+Afin de respecter le principe du Git Flow, j'ai appris a utilisé l'outil Git Flow,
+qui devrait, lui aussi, être utilisé au sein du projet annuel afin d'avoir un
+bel historique Git, et de permettre une meilleure utilisation de l'outil Git.
+Cet outil est intéressant, car il permet de réduire le nombre de commande Git a
+entrée dans sa console lorsque l'on souhaite faire du Git Flow soi-même.
+
+=== Découverte du langage AsciiDoctor
+
+Ce projet m'a permis de monter en compétences sur le langage **AsciiDoctor**,
+afin de rédigé mon rapport de projet.
+Il m'a permis de réalisé un rapport de grande qualité assez rapidement,
+avec un minimum d'effort en terme d'apprentissage du langage.
