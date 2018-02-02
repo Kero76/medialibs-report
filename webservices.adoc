@@ -1,0 +1,233 @@
+:author: Nicolas GILLE
+:email: nic.gille@gmail.com
+:description: Rapport du projet de JEE
+:revdate: 02 février 2018
+:revnumber: 0.1
+:revremark: Création du fichier initial
+:lang: fr
+
+== Définition des WebServices
+
+=== Présentation du service d'authentification
+
+.Service d'authentification
+[cols="^.^1,^.^2,^.^1,^.^2,^.^2", width="100%", options="header"]
+|======================================
+| Méthode
+| URL
+| Body
+| Description
+| Code de retour
+
+| POST
+| /api/v1/services/auth/auth/authenticate
+| User
+| Permet de se connecter à l'application
+| _200_ en cas de réussite lors de l'inscription.
+  _204_ en cas d'absence de l'utilisateur dans la base de données.
+  _404_ en cas de problème majeure.
+
+| POST
+| /api/v1/services/auth/register
+| User
+| Permet de s'inscrire sur à l'application avec un rôle d'utilisateur
+| _201_ en cas de réussite lors de l'enregistrement de l'utilisateur.
+  _409_ en cas de conflit d'existence.
+|======================================
+
+=== Présentation du service de gestion des emprunts
+
+.Service de gestions des emprunts
+[cols="^.^1,^.^2,^.^1,^.^2,^.^2", width="100%", options="header"]
+|======================================
+| Méthode
+| URL
+| Body
+| Description
+| Code de retour
+
+| GET
+| /api/v1/services/loans/
+| -
+| Retourne l'ensemble des emprunts présent dans le système.
+| _200_ en cas de réussite lors de la requête.
+ _204_ en cas d'absence d'élément dans le système.
+
+| GET
+| /api/v1/services/loans/{id}
+| -
+| Retourne un emprunt spécifique.
+| _200_ en cas de réussite lors de la requête.
+  _204_ en cas d'absence d'élément dans le système.
+
+| POST
+| /api/v1/services/loans/
+| Loan
+| Ajoute un nouvel emprunt dans le système.
+| _201_ si l'emprunt est crée.
+  _409_ si l'emprunt existe déjà.
+
+| PUT
+| /api/v1/services/loans/{id}
+| Loan
+| Modifie les informations relative a l'emprunt voulu.
+| _200_ en cas de modification réussie.
+  _204_ si l'objet a modifier n'existe pas dans le système.
+
+| DELETE
+| /api/v1/services/loans/{id}
+| -
+| Supprime l'emprunt sélectionné.
+| _200_ en cas de suppression réussie.
+  _204_ si l'objet a supprimer n'existe pas dans le système.
+|======================================
+
+=== Présentation du service de gestion des médias
+
+.Service de gestions des medias
+[cols="^.^1,^.^2,^.^1,^.^2,^.^2", width="100%", options="header"]
+|======================================
+| Méthode
+| URL
+| Body
+| Description
+| Code de retour
+
+| GET
+| /api/v1/services/medias/
+| -
+| Retourne l'ensemble des médias présent dans le système.
+| _200_ en cas de réussite lors de la requête.
+  _204_ en cas d'absence d'élément dans le système.
+
+| GET
+| /api/v1/services/medias/{id}
+| -
+| Retourne un média spécifique.
+| _200_ en cas de réussite lors de la requête.
+  _204_ en cas d'absence d'élément dans le système.
+
+| POST
+| /api/v1/services/medias/
+| Media
+| Ajoute un nouveau média dans le système.
+| _201_ si le média est crée.
+  _409_ si le média existe déjà.
+
+| PUT
+| /api/v1/services/medias/{id}
+| Media
+| Modifie les informations relative au média voulu.
+| _200_ en cas de modification réussie.
+  _204_ si l'objet a modifier n'existe pas dans le système.
+
+| DELETE
+| /api/v1/services/medias/{id}
+| -
+| Supprime le média sélectionné.
+| _200_ en cas de suppression réussie.
+  _204_ si l'objet a supprimer n'existe pas dans le système.
+|======================================
+
+=== Présentation du service de gestion des stocks
+
+.Service de gestions des stocks
+[cols="^.^1,^.^2,^.^1,^.^2,^.^2", width="100%", options="header"]
+|======================================
+| Méthode
+| URL
+| Body
+| Description
+| Code de retour
+
+| GET
+| /api/v1/services/stocks/
+| -
+| Retourne l'ensemble des stocks présent dans le système.
+| _200_ en cas de réussite lors de la requête.
+  _204_ en cas d'absence d'élément dans le système.
+
+| GET
+| /api/v1/services/stocks/{id}
+| -
+| Retourne un stock spécifique.
+| _200_ en cas de réussite lors de la requête.
+  _204_ en cas d'absence d'élément dans le système.
+
+| POST
+| /api/v1/services/stocks/
+| Stock
+| Ajoute un nouveau stock dans le système.
+| _201_ si le stock est crée.
+  _409_ si le stock existe déjà.
+
+| PUT
+| /api/v1/services/stocks/{id}/increment
+| Stock
+| Incrémente le stock courant.
+| _200_ en cas de modification réussie.
+  _204_ si l'objet a modifier n'existe pas dans le système.
+  _405_ si l'incrémentation est impossible.
+
+| PUT
+| /api/v1/services/stocks/{id}/decrement
+| Stock
+| Décrémente le stock courant.
+| _200_ en cas de modification réussie.
+  _204_ si l'objet a modifier n'existe pas dans le système.
+  _405_ si la décrémentation est impossible.
+
+| DELETE
+| /api/v1/services/stocks/{id}
+| -
+| Supprime le stock sélectionné.
+| _200_ en cas de suppression réussie.
+  _204_ si l'objet a supprimer n'existe pas dans le système.
+|======================================
+
+=== Présentation du service de gestion des utilisateurs
+
+.Service de gestions des utilisateurs
+[cols="^.^1,^.^2,^.^1,^.^2,^.^2", width="100%", options="header"]
+|======================================
+| Méthode
+| URL
+| Body
+| Description
+| Code de retour
+
+| GET
+| /api/v1/services/users/
+| -
+| Retourne l'ensemble des utilisateurs présent dans le système.
+| _200_ en cas de réussite lors de la requête.
+  _204_ en cas d'absence d'élément dans le système.
+
+| GET
+| /api/v1/services/users/{id}
+| -
+| Retourne un utilisateur spécifique.
+| _200_ en cas de réussite lors de la requête.
+  _204_ en cas d'absence d'élément dans le système.
+
+| POST
+| /api/v1/services/users/
+| User
+| Ajoute un nouvel utilisateur dans le système.
+| _201_ si l'utilisateur est crée.
+  _409_ si l'utilisateur existe déjà.
+
+| PUT
+| /api/v1/services/users/{id}
+| User
+| Modifie les informations relative a l'utilisateur voulu.
+| _200_ en cas de modification réussie.
+ _204_ si l'objet a modifier n'existe pas dans le système.
+
+| DELETE
+| /api/v1/services/users/{id}
+| -
+| Supprime l'utlisateur sélectionné.
+| _200_ en cas de suppression réussie.
+  _204_ si l'objet a supprimer n'existe pas dans le système.
+|======================================
