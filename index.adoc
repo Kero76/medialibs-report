@@ -6,11 +6,12 @@
 :revremark: Ajout de l'include relatif aux compétences acquises.
 :lang: fr
 
-= Rapport du projet de JEE - Medialibs
-
-// Include all parts of report.
+// Table of Content settings.
 :toc: auto
 :toc-title: Table des Matières
+
+= Rapport du projet de JEE - Medialibs
+
 toc::[]
 
 <<<
