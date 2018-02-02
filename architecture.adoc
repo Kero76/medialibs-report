@@ -41,8 +41,11 @@ d'intégrer à la vue , du moment que le service permet d'effectuer l'action vou
 par un utilisateur humain derrière l'interface utilisateur.
 
 <<<
-=== Diagrammes UML
+// Define image dir for all images used after.
 :imagesdir: ./uml/libs/
+=== Diagrammes UML des libraires
+
+==== Modèle des Adverts
 
 Voici le diagramme de classe de la librairie relative aux Adverts.
 On remarque que celle-ci est assez simple et ne possède aucun lien avec
@@ -53,6 +56,9 @@ important de projet.
 .Diagramme uml du modèle des Adverts.
 image::advert.png[width="450", height="450", align="center"]
 
+<<<
+==== Modèle des Emprunts
+
 Voici le diagramme de classe de la librairie relative aux Emprunts.
 On remarque que celle-ci est assez simple et ne possède aucun lien avec
 une autre librairie du projet.
@@ -61,6 +67,9 @@ important de projet.
 [#model-loan]
 .Diagramme uml du modèle des Emprunts.
 image::loan.png[width="450", height="450", align="center"]
+
+<<<
+==== Modèle des Médias
 
 Voici le diagramme de classe de la librairie relative aux Médias.
 On remarque que celle-ci est assez simple et ne possède aucun lien avec
@@ -71,6 +80,9 @@ important de projet.
 .Diagramme uml du modèle des Médias.
 image::media.png[width="450", height="450", align="center"]
 
+<<<
+==== Modèle des Stocks
+
 Voici le diagramme de classe de la librairie relative aux Stocks.
 On remarque que celle-ci est assez simple et ne possède aucun lien avec
 une autre librairie du projet.
@@ -79,6 +91,9 @@ important de projet.
 [#model-stock]
 .Diagramme uml du modèle des Stocks.
 image::stock.png[width="450", height="450", align="center"]
+
+<<<
+==== Modèle des Utilisateurs
 
 Voici le diagramme de classe de la librairie relative aux Utilisateurs du système.
 On remarque que celle-ci est assez simple et ne possède aucun lien avec
@@ -92,3 +107,32 @@ simplement.
 [#model-user]
 .Diagramme uml du modèle des Utilisateurs.
 image::user.png[width="450", height="450", align="center"]
+
+<<<
+// Define image dir for all images used after.
+:imagesdir: ./uml/webservices/
+=== Diagrammes UML des WebServices
+
+==== Web service d'authentification
+
+Ce web service est un peu spécial, son rôle est de permettre à un utilisateur de
+se connecter ou à s'inscrire sur le système via un ensemble de deux méthodes
+spécifique.
+
+[#ws-authentication]
+.Diagramme uml du web service d'authentification.
+image::authentication.png[width="450", height="450", align="center"]
+
+==== Web service des emprunts / médias / stocks / users
+
+Ces différents web services sont simplement un ensemble de *méthodes CRUD*,
+sans rien de plus spécifique. Il y a seulement des méthodes de filtrage pour récupérer
+des éléments précis du modèle voulu.
+La seule exception provient du webservice relatif au stock, dans lequel on peut
+directement incrémenter ou décrémenter le stock courant d'un média via deux méthodes
+précises plutôt que de devoir modifier renvoyer constamment l'objet avec la nouvelle 
+valeur du stock courant.
+
+[#ws-others]
+.Diagramme uml des services d'emprunts, médias, stocks et utilisateurs.
+image::others.png[width="450", height="450", align="center"]
