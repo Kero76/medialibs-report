@@ -5,6 +5,7 @@
 :revnumber: 0.1
 :revremark: Création du fichier initial.
 :lang: fr
+:source-highlighter: rouge
 
 == Difficultés rencontrées
 
@@ -55,7 +56,8 @@ D'autres problèmes sont intervenus en plus de son utilisation uniquement lors d
 En effet, il est nécessaire d'avoir un *contexte d'utilisation* basé sur Spring-Boot
 afin que les annotations `@Autowired` puisse être utilisées dans les tests. +
 Pour cela, il m'a fallu définir la classe suivante dans l'ensemble de mes tests
-```java
+[source,java]
+---------------------------------------------------
 package fr.nicolasgille.medialibs.core.[library_name];
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -63,7 +65,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ApplicationContext {
 }
-```
+---------------------------------------------------
+
 Cette classe a pour unique but de permettre l'exécution des tests unitaires liés
 aux bibliothèques, à savoir les tests sur les *méthodes customs* des **Repository**.
 
@@ -75,10 +78,9 @@ j'ai du trouver une alternative à cette solution, qui s'est avérée être les 
 En effet, un *module maven* peut être comparé à un *sous projet* présent dans les sources
 du projet maven initial.
 Cette solution consiste donc a définir dans le *pom.xml* parent les modules de la façon suivante :
-
-```xml
+[source,xml]
+--------------------------------------------------------
 <project>
-  ....
   <!-- Module definition -->
     <modules>
         <module>advert</module>
@@ -87,9 +89,8 @@ Cette solution consiste donc a définir dans le *pom.xml* parent les modules de 
         <module>stock</module>
         <module>loan</module>
     </modules>
-  ....
-</project
-```
+</project>
+--------------------------------------------------------
 
 Les avantages d'utiliser cette méthode sont qu'il est assez aisé d'ajouter des
 dépendance uniquement dans certaines libraries et non dans le *pom parent* initial.
@@ -115,9 +116,9 @@ sur le dépôt maven. Ceci ce fait assez simplement en configurant son fichier
 *settings.xml* présent dans le dossier *$HOME/.m2* de son système d'exploitation,
 puis en ajoutant ces lignes dans son *pom.xml*
 
-```xml
+[source,xml]
+--------------------------------------------------------
 <project>
-  ...
   <!-- Distribution management -->
   <distributionManagement>
       <repository>
@@ -125,9 +126,9 @@ puis en ajoutant ces lignes dans son *pom.xml*
           <url>${myMavenRepo.write.url}</url>
       </repository>
   </distributionManagement>
-  ...
 </project>
-```
+--------------------------------------------------------
+
 Ceci fait, il suffit ensuite de taper la commande suivante `$ mvn deploy`,
 dans le module de la librairie de son choix afin de l'envoyer sur le serveur.
 
