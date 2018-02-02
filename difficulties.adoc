@@ -152,3 +152,17 @@ J'ai ensuite repris mon projet entièrement à 0, mais trop tard, ce faisant, j'
 de temps pour compléter l'ensemble des exigences du projet.
 Il n'en reste pas moins que j'ai appris énormement de choses au cours du projet,
 même si cela ne transparait pas dans le rendu final du projet.
+
+=== Difficulté de compréhension de Sprig-Security
+
+J'ai eu du mal a comprendre le fonctionnement du module de sécurité de Spring Boot.
+J'ai compris l'essentiel, mais ça mise en place fut difficile et peu fructueuse,
+c'est pourquoi on ne retrouve pas de module de sécurité sur le projet final rendu.
+
+// Footnote not working in pdf exportation, but in HTML, it work as well as possible.
+Cependant, pour combler ce problème, je souhaitais développé via la
+POA.footnote:[Programmation Orienté Aspect], un aspect ayant pour seul but de
+vérifier l'existance et le rôle de la personne souhaitant utilisé un service,
+via ses identifiants passé dans le corps de la requête HTTP.
+Cependant, faute de temps, je n'ai pu mettre en place cette solution qui semblait
+fort intéressante à mettre en place.
