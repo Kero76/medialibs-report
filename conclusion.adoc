@@ -1,0 +1,20 @@
+:author: Nicolas GILLE
+:email: nic.gille@gmail.com
+:description: Rapport du projet de JEE
+:revdate: 02 février 2018
+:revnumber: 0.1
+:revremark: Création du fichier de base.
+:lang: fr
+
+== Conclusion
+
+Ce projet m'aura permis d'apprendre énormement de chose sur le monde du java,
+et plus particulièrement sur le framework **Spring Boot** et sur **Maven**.
+J'ai en effet acquis de nombreuses compétences qui m'aideront potentiellement
+dans le monde professionel ou pour des projets d'envergure plus personnel.
+Je regrette simplement d'avoir mis trop de temps a reprendre l'entièreté du projet
+afin d'avoir un modèle plus simple a manier, et moins usine à gaz.
+
+Je compte apprendre, dès que j'aurais un peu de temps libre le framework **React**,
+afin de compléter ce projet et voir si ma nouvelle architecture était la bonne
+ou bien si celle-ci venait a souffrir de quelques soucis dans sa conception.

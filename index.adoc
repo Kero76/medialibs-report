@@ -2,8 +2,8 @@
 :email: nic.gille@gmail.com
 :description: Rapport du projet de JEE
 :revdate: 02 février 2018
-:revnumber: 0.3
-:revremark: Ajout de l'include relatif aux compétences acquises.
+:revnumber: 0.4
+:revremark: Ajout de la conclusion au rapport.
 :lang: fr
 
 // Table of Content settings.
@@ -28,6 +28,9 @@ include::technologies.adoc[]
 
 <<<
 include::new-skills.adoc[]
+
+<<<
+include::conclusion.adoc[]
 
 <<<
 include::annexes.adoc[]
