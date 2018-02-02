@@ -101,6 +101,7 @@ une fois encore de généré uniquement un webservice précis, comme on le retro
 dans une application plus importante.
 
 === L'envoi des librairies sur un système ArchiFactory / Nexus
+
 Un problème lié directement avec le problème précédent fut soulevé lors de la compilation
 des bibliothèques. En effet, devant importer mes *jar* à la main dans mon projet,
 j'ai voulu automatiser cette action via l'ajout d'un système typé **ArchiFactory / Nexus**.
@@ -140,3 +141,14 @@ J'ai donc cherché une solution alternative que j'ai trouvé, via la commande su
 `$ mvn install:install-file -Dfile=[path_to_source]/[jar_name].jar -DgroupId=[group_id] -DartifactId=[artifactId] -Dversion=[jar_version] -Dpackaging=jar`
 Ceci permet d'installer les dépendances maven directement dans le dossier *.m2*
 afin de les rendres accessible depuis l'ensemble des projets présent sur la machine.
+
+=== Complexité temporel du projet
+
+J'ai manqué de temps pour réalisé ce projet dans son entièreté.
+Ceci est entièrement de ma faute, car j'ai involontairement complexifié grandement
+le projet de base en y ajoutant un modèle bien trop conséquent pour être utilisable
+facilement. +
+J'ai ensuite repris mon projet entièrement à 0, mais trop tard, ce faisant, j'ai manqué
+de temps pour compléter l'ensemble des exigences du projet.
+Il n'en reste pas moins que j'ai appris énormement de choses au cours du projet,
+même si cela ne transparait pas dans le rendu final du projet.
