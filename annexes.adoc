@@ -2,31 +2,39 @@
 :email: nic.gille@gmail.com
 :description: Annexes du rapport.
 :revdate: 01 février 2018
-:revnumber: 0.2
-:revremark: Ajout de lien utile sur les documentations des outils.
+:revnumber: 0.3
+:revremark: Ajout de l'attribut appendix.
 :lang: fr
+
+// Special settings
+:appendix-caption: Annexe
 
 == Annexes
 
+[appendix]
 === Liens utiles
 
 Voici les liens vers les dépôts GIT utilisés pour ce projet :
 
-* Code source des librairies : http://79.137.32.42:3000/Kero76/medialibs-core
-* Code source des webservices : http://79.137.32.42:3000/Kero76/medialibs-project
-* Code source du rapport du projet : http://79.137.32.42:3000/Kero76/medialibs-report
+* Code source des librairies : http://79.137.32.42:3000/Kero76/medialibs-core[MediaLibs Core]
+* Code source des webservices : http://79.137.32.42:3000/Kero76/medialibs-project[MediaLibs Service]
+* Code source du rapport du projet : http://79.137.32.42:3000/Kero76/medialibs-report[MediaLibs Report]
+* Code source de l'ancienne version du projet : http://79.137.32.42:3000/Kero76/medialibs-project-old-version[MediaLibs Old Version]
 * Documentation de Spring Boot : https://docs.spring.io/spring-boot/docs/current/reference/html/index.html
 * Petit Gist sur les commandes de Git Flow : https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac
 * Manuel d'utilisation de l'AsciiDoctor : http://asciidoctor.org/docs/user-manual/#introduction-to-asciidoctor
 
+[appendix]
 === License
 
 Ce projet est sous license https://opensource.org/licenses/MIT[MIT].
 
+[appendix]
 === Auteur
 
 Ce projet à été réalisé dans son entièreté par Nicolas GILLE : <nic.gille@gmail.com>
 
+[appendix]
 === Question bonus
 
 L'utilisation de l'architecture REST est plus avantageuse lorsque l'on développe

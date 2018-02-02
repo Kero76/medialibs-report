@@ -2,8 +2,8 @@
 :email: nic.gille@gmail.com
 :description: Rapport du projet de JEE
 :revdate: 02 février 2018
-:revnumber: 0.5
-:revremark: Ajout de la définition des web services.
+:revnumber: 1.0
+:revremark: Version finale 1.0 du rapport de JEE.
 :lang: fr
 
 // Table of Content settings.

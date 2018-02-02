@@ -2,10 +2,18 @@
 :email: nic.gille@gmail.com
 :description: Introduction du rapport.
 :revdate: 01 février 2018
-:revnumber: 0.1
-:revremark: Création du fichier initial.
+:revnumber: 0.2
+:revremark: Ajout de la section dedication.
 :lang: fr
 
+[dedication]
+== Remerciements
+
+Je tiens a remercier MM. GROSJEAN et ROUSSEAU pour avoir respectivement assurés
+les cours et les TP de Java Enterprise Editions et d'avoir répondu a toutes mes
+questions aux cours de l'année scolaires 2017 / 2018.
+
+<<<
 == Contexte du projet
 
 Ce projet consiste à créer un système permettant la consultation des médias
