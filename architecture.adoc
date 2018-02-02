@@ -1,12 +1,15 @@
 :author: Nicolas GILLE
 :email: nic.gille@gmail.com
 :description: Architecture du projet.
-:revdate: 01 février 2018
-:revnumber: 0.1
-:revremark: Création du fichier initial.
+:revdate: 02 février 2018
+:revnumber: 0.2
+:revremark: Ajout des diagrammes UML des modèles Entités du projet.
 :lang: fr
 
+
 == Architecture du projet
+
+=== Description de l'architecture
 
 Au niveau de l'architecture du projet, j'ai choisi de réalisé uniquement des services
 web entièrement indépendant les uns des autres.
@@ -36,3 +39,56 @@ En effet, il s'agit au final d'une application devant uniquement requếter
 des services web ayant des fonctions bien spécifiques, qu'il est alors facile
 d'intégrer à la vue , du moment que le service permet d'effectuer l'action voulu
 par un utilisateur humain derrière l'interface utilisateur.
+
+<<<
+=== Diagrammes UML
+:imagesdir: ./uml/libs/
+
+Voici le diagramme de classe de la librairie relative aux Adverts.
+On remarque que celle-ci est assez simple et ne possède aucun lien avec
+une autre librairie du projet.
+De plus, celle-ci est assez générique pour qu'elle soit adaptable a un ensemble
+important de projet.
+[#model-alert]
+.Diagramme uml du modèle des Adverts.
+image::advert.png[width="450", height="450", align="center"]
+
+Voici le diagramme de classe de la librairie relative aux Emprunts.
+On remarque que celle-ci est assez simple et ne possède aucun lien avec
+une autre librairie du projet.
+De plus, celle-ci est assez générique pour qu'elle soit adaptable a un ensemble
+important de projet.
+[#model-loan]
+.Diagramme uml du modèle des Emprunts.
+image::loan.png[width="450", height="450", align="center"]
+
+Voici le diagramme de classe de la librairie relative aux Médias.
+On remarque que celle-ci est assez simple et ne possède aucun lien avec
+une autre librairie du projet.
+De plus, celle-ci est assez générique pour qu'elle soit adaptable a un ensemble
+important de projet.
+[#model-media]
+.Diagramme uml du modèle des Médias.
+image::media.png[width="450", height="450", align="center"]
+
+Voici le diagramme de classe de la librairie relative aux Stocks.
+On remarque que celle-ci est assez simple et ne possède aucun lien avec
+une autre librairie du projet.
+De plus, celle-ci est assez générique pour qu'elle soit adaptable a un ensemble
+important de projet.
+[#model-stock]
+.Diagramme uml du modèle des Stocks.
+image::stock.png[width="450", height="450", align="center"]
+
+Voici le diagramme de classe de la librairie relative aux Utilisateurs du système.
+On remarque que celle-ci est assez simple et ne possède aucun lien avec
+une autre librairie du projet.
+De plus, celle-ci est assez générique pour qu'elle soit adaptable a un ensemble
+important de projet.
+De plus, la présence de l'énumérateur impose un Rôle basique à l'utilisateur,
+mais peut être hérité par une autre librairie afin d'y ajouter de nouveau rôle
+simplement.
+
+[#model-user]
+.Diagramme uml du modèle des Utilisateurs.
+image::user.png[width="450", height="450", align="center"]
